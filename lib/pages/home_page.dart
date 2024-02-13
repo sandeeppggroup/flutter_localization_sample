@@ -25,7 +25,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(LocaleData.title.getString(context)),
+        title: const Text(
+          'Select your language : ',
+          style: TextStyle(fontSize: 18),
+        ),
         actions: [
           DropdownButton(
               value: _currentLocale,
@@ -42,15 +45,37 @@ class _HomePageState extends State<HomePage> {
                   value: 'tl',
                   child: Text('Tamil'),
                 ),
+                DropdownMenuItem(
+                  value: 'hnd',
+                  child: Text('Hindi'),
+                ),
+                DropdownMenuItem(
+                  value: 'knd',
+                  child: Text('Kannada'),
+                ),
               ],
               onChanged: (value) {
                 _setLocale(value);
               }),
         ],
       ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-        child: Text(context.formatString(LocaleData.body, ['Sandeep'])),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            const Divider(),
+            Text(
+              context.formatString(LocaleData.title, ['Sandeep']),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+              child: Text(LocaleData.body.getString(context),
+                  style: const TextStyle(
+                      fontSize: 17, fontWeight: FontWeight.w500)),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -65,6 +90,10 @@ class _HomePageState extends State<HomePage> {
       _flutterLocalization.translate('ml');
     } else if (value == 'tl') {
       _flutterLocalization.translate('tl');
+    } else if (value == 'hnd') {
+      _flutterLocalization.translate('hnd');
+    } else if (value == 'knd') {
+      _flutterLocalization.translate('knd');
     } else {
       return;
     }

@@ -4,23 +4,35 @@ const List<MapLocale> LOCALES = [
   MapLocale('en', LocaleData.EN),
   MapLocale('ml', LocaleData.ML),
   MapLocale('tl', LocaleData.TL),
+  MapLocale('hnd', LocaleData.HND),
+  MapLocale('knd', LocaleData.KND),
 ];
 mixin LocaleData {
   static const String title = 'title';
   static const String body = 'body';
 
   static const Map<String, dynamic> EN = {
-    title: 'Localization',
-    body: 'Welcome to this localized Flutter aplication %a'
+    title: 'welcome to towner %a',
+    body: 'The app for streamlined taxi management'
   };
 
   static const Map<String, dynamic> ML = {
-    title: 'പ്രാദേശികവൽക്കരണം',
-    body: 'ഈ പ്രാദേശികവൽക്കരിച്ച ഫ്ലട്ടർ ആപ്ലിക്കേഷനിലേക്ക് സ്വാഗതം %a'
+    title: 'ടൌണറിലേക്ക് സ്വാഗതം %a',
+    body: 'കാര്യക്ഷമമായ ടാക്സി മാനേജ്മെൻ്റിനുള്ള ആപ്പ്'
   };
 
   static const Map<String, dynamic> TL = {
-    title: 'உள்ளூர்மயமாக்கல்',
-    body: 'இந்த உள்ளூர்மயமாக்கப்பட்ட Flutter பயன்பாட்டிற்கு வரவேற்கிறோம் %a'
+    title: 'நகரவாசிக்கு வரவேற்கிறோம் %a',
+    body: 'நெறிப்படுத்தப்பட்ட டாக்ஸி நிர்வாகத்திற்கான பயன்பாடு'
+  };
+
+  static const Map<String, dynamic> HND = {
+    title: 'टाउनर में आपका स्वागत है %a',
+    body: 'सुव्यवस्थित टैक्सी प्रबंधन के लिए ऐप। '
+  };
+
+  static const Map<String, dynamic> KND = {
+    title: 'ಪಟ್ಟಣದವರಿಗೆ ಸ್ವಾಗತ %a',
+    body: 'ಸುವ್ಯವಸ್ಥಿತ ಟ್ಯಾಕ್ಸಿ ನಿರ್ವಹಣೆಗಾಗಿ ಅಪ್ಲಿಕೇಶನ್'
   };
 }
